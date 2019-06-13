@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./css/calc.css"></link>
+    <script src="./js/calc.js"></script>
+  </head>
+
+  <body>
+    <body>
+        <div class="box">
+            <div class="display">
+                <input type="text" readonly size="18" id="num">
+            </div>
+            <div class="keys">
+                <p>
+                    <input type="button" class="button gray" value="mrc" onclick='read_memory()'>
+                    <input type="button" class="button gray" value="m-" onclick='clear_memory()'>
+                    <input type="button" class="button gray" value="m+" onclick='store_memory()'>
+                    <input type="button" class="button pink" value="/" onclick='sign("/")'>
+                    <input type="button" class="button pink" value="√" onclick='sign("√")'>
+                </p>
+                <p>
+                    <input type="button" class="button black" value="7" onclick='input("7")'>
+                    <input type="button" class="button black" value="8" onclick='input("8")'>
+                    <input type="button" class="button black" value="9" onclick='input("9")'>
+                    <input type="button" class="button pink" value="*" onclick='sign("*")'>
+                    <input type="button" class="button pink" value="⌫" onclick='bck()'>
+                </p>
+                <p>
+                    <input type="button" class="button black" value="4" onclick='input("4")'>
+                    <input type="button" class="button black" value="5" onclick='input("5")'>
+                    <input type="button" class="button black" value="6" onclick='input("6")'>
+                    <input type="button" class="button pink" value="-" onclick='sign("-")'>
+                </p>
+                <p>
+                    <input type="button" class="button black" value="1" onclick='input("1")'>
+                    <input type="button" class="button black" value="2" onclick='input("2")'>
+                    <input type="button" class="button black" value="3" onclick='input("3")'>
+                    <input type="button" class="button pink" value="+" onclick='sign("+")'>
+                </p>
+                <p>
+                    <input type="button" class="button black" value="0" onclick='input("0")'>
+                    <input type="button" class="button black" value="." onclick='input(".")'>
+                    <input type="button" class="button black" value="C" onclick='clr()'>
+                    <input type="button" class="button orange" value="=" onclick='eval()'>
+                </p>
+            </div>
+        </div>
+    </body>
+  </body>
+</html>
