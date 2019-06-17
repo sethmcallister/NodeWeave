@@ -47,7 +47,7 @@ public class EvalTask {
 
         double result = 0;
         while (!numberStack.isEmpty()) {
-//            System.out.println("numberStackSize == " + numberStack.size());
+            System.out.println("numberStackSize == " + numberStack.size());
             if (numberStack.size() == 1) {
                 if (!operatorStack.isEmpty()) {
                     Operator operator = operatorStack.pop();
@@ -63,7 +63,7 @@ public class EvalTask {
             Double num1 = numberStack.pop();
             Double num2 = numberStack.pop();
 
-//            System.out.println(String.format("%s %s %s", num1, operator.name(), num2));
+            System.out.println(String.format("%s %s %s", num1, operator.name(), num2));
 
             double temp = 0;
             if (operator == Operator.ADD) {
@@ -77,43 +77,10 @@ public class EvalTask {
             } else if (operator == Operator.SQUARE) {
                 temp = Math.sqrt(num1);
             }
-//            System.out.println("temp == " + temp);
+            System.out.println("temp == " + temp);
             numberStack.push(temp);
-//            System.out.println("numberStack == " + numberStack.toString());
+            System.out.println("numberStack == " + numberStack.toString());
         }
-
-
-//        int result = 0;
-//        int temp = 0;
-//        Operator operator = null;
-//
-//        // loop through everything in formula
-//        for (int i = 0; i < formula.length; i++) {
-//            char c = formula[i]; // current char in formula
-//
-//            // is a number
-//            if (Character.isDigit(c)) {
-//                int number = c - '0'; // get the real number value not the ordinal value
-//                // loop through all following chars to see if there is a bigger number so 1, 0 == 10 not 1 + 0 = 1
-//                while (++i < formula.length && Character.isDigit(formula[i])) { // ++i == increment then assign, i++ == assign then increment
-//                    number = number + formula[i] - '0';
-//                }
-//                i--; // return to last digit
-//                System.out.println(number);
-//
-//                if (operator != null) {
-//                    if (operator == Operator.DIV) {
-//                        temp = temp / number;
-//                    } else if (operator == Operator.MULT) {
-//                        temp = temp * number;
-//                    }
-//                }
-//            } else {
-//                operator = Operator.findByCode(c);
-//            }
-//        }
-//
-////
         return result;
     }
 

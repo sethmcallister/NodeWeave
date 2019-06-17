@@ -12,19 +12,50 @@ socket.onmessage = function(event) {
   var message = event.data;
   if (message.startsWith("mrc:")) {
     var data = message.replace("mrc:", "")
-    document.getElementById("num").value = data;
+    display(data)
   } else if (message.startsWith("eval:")) {
     var data = message.replace("eval:", "")
-    document.getElementById("num").value = data;
+    display(data)
   }
-  return false;
 };
 
 function sign(operator) {
-  var num = document.getElementById("num").value;
-  socket.send("num:" + num)
-  socket.send("operator:" + operator)
-  clr()
+  if (operator == "π") {
+    var num = document.getElementById("num").value;
+    socket.send("num:" + num)
+    socket.send("num:" + Math.PI)
+    display(Math.PI.toFixed(2))
+  } else if (operator == "√") {
+    var num = document.getElementById("num").value;
+    socket.send("num:" + num)
+    socket.send("operator:" + operator)
+    eval()
+  } else {
+    var num = document.getElementById("num").value;
+    socket.send("num:" + num)
+    socket.send("operator:" + operator)
+    display('')
+  }
+}
+
+function display(output) {
+  if (output == '') {
+    document.getElementById("num").value = output;
+    return
+  }
+  console.log("isNaN(" + output + ") == " + isNaN(output))
+  if (!isNaN(output)) {
+    split = output.toString().split(".", "")
+    console.log(split)
+    if (split.length > 1 && split[0].length > 9 && split[1].length > 2) {
+      output = output.toExponential()
+    }
+    if (output instanceof Number) {
+      output = output.toFixed(2).toString()
+    }
+    // todo finish exponents
+  }
+  document.getElementById("num").value = (output.toString().replace(/(\.[0-9]*[1-9])0+$|\.0*$/,'$1'));
 }
 
 function store_memory() {
@@ -45,11 +76,8 @@ function bck() {
 }
 
 function clr() {
-  document.getElementById("num").value = '';
-}
-
-function c(val) {
-  document.getElementById("num").value=val;
+  display('')
+  socket.send("clear")
 }
 
 function input(val) {

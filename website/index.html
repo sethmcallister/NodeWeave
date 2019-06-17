@@ -1,50 +1,53 @@
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="./css/calc.css"></link>
-    <script src="./js/calc.js"></script>
-  </head>
-
-  <body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>NodeWeave Calculator</title>
+        <link rel="stylesheet" type="text/css" href="./css/calc.css"></link>
+        <script src="./js/calc.js"></script>
+    </head>
     <body>
         <div class="box">
-            <div class="display">
-                <input type="text" readonly size="18" id="num">
+                <div class="display">
+                    <input type="text" readonly size="18" id="num">
+                </div>
+                <div class="keys">
+                    <div class="row">
+                        <button type="button" class="memory" onclick='read_memory()'>MRC</button>
+                        <button type="button" class="memory" onclick='clear_memory()'>M-</button>
+                        <button type="button" class="memory" onclick='store_memory()'>M+</button>
+                        <button type="button" class="sign" onclick='sign("/")'>/</button>
+                        <button type="button" class="sign" onclick='sign("√")'>√</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="number" onclick='input("7")'>7</button>
+                        <button type="button" class="number" onclick='input("8")'>8</button>
+                        <button type="button" class="number" onclick='input("9")'>9</button>
+                        <button type="button" class="sign" onclick='sign("*")'>*</button>
+                        <button type="button" class="sign" onclick='bck()'>⌫</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="number" onclick='input("4")'>4</button>
+                        <button type="button" class="number" onclick='input("5")'>5</button>
+                        <button type="button" class="number" onclick='input("6")'>6</button>
+                        <button type="button" class="sign" onclick='sign("-")'>-</button>
+                        <button type="button" class="sign" onclick='sign("π")'>π</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="number" onclick='input("1")'>1</button>
+                        <button type="button" class="number" onclick='input("2")'>2</button>
+                        <button type="button" class="number" onclick='input("3")'>3</button>
+                        <button type="button" class="sign" onclick='sign("+")'>+</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="number" onclick='input("0")'>0</button>
+                        <button type="button" class="number" onclick='input(".")'>.</button>
+                        <button type="button" class="number" onclick='clr()'>C</button>
+                        <button type="button" class="eval" onclick='eval()'>=</button>
+                    </div>
+                </div>
             </div>
-            <div class="keys">
-                <p>
-                    <input type="button" class="button gray" value="mrc" onclick='read_memory()'>
-                    <input type="button" class="button gray" value="m-" onclick='clear_memory()'>
-                    <input type="button" class="button gray" value="m+" onclick='store_memory()'>
-                    <input type="button" class="button pink" value="/" onclick='sign("/")'>
-                    <input type="button" class="button pink" value="√" onclick='sign("√")'>
-                </p>
-                <p>
-                    <input type="button" class="button black" value="7" onclick='input("7")'>
-                    <input type="button" class="button black" value="8" onclick='input("8")'>
-                    <input type="button" class="button black" value="9" onclick='input("9")'>
-                    <input type="button" class="button pink" value="*" onclick='sign("*")'>
-                    <input type="button" class="button pink" value="⌫" onclick='bck()'>
-                </p>
-                <p>
-                    <input type="button" class="button black" value="4" onclick='input("4")'>
-                    <input type="button" class="button black" value="5" onclick='input("5")'>
-                    <input type="button" class="button black" value="6" onclick='input("6")'>
-                    <input type="button" class="button pink" value="-" onclick='sign("-")'>
-                </p>
-                <p>
-                    <input type="button" class="button black" value="1" onclick='input("1")'>
-                    <input type="button" class="button black" value="2" onclick='input("2")'>
-                    <input type="button" class="button black" value="3" onclick='input("3")'>
-                    <input type="button" class="button pink" value="+" onclick='sign("+")'>
-                </p>
-                <p>
-                    <input type="button" class="button black" value="0" onclick='input("0")'>
-                    <input type="button" class="button black" value="." onclick='input(".")'>
-                    <input type="button" class="button black" value="C" onclick='clr()'>
-                    <input type="button" class="button orange" value="=" onclick='eval()'>
-                </p>
-            </div>
-        </div>
     </body>
-  </body>
 </html>

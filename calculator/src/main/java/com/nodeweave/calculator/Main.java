@@ -1,15 +1,16 @@
 package com.nodeweave.calculator;
 
-
 import com.nodeweave.calculator.dao.CalculatorDAO;
 import com.nodeweave.calculator.socket.CalculatorSocket;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.websocket.server.WebSocketHandler;
 import org.eclipse.jetty.websocket.servlet.WebSocketServletFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Main {
-//    public static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
+    public static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
     private static Main instance;
     private final CalculatorDAO calculatorDAO;
 
